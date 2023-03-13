@@ -1,0 +1,10 @@
+services:
+  pyspark:
+    image: apache/spark-py
+    command: /bin/bash
+    volumes:
+      - type: bind
+        source: ./
+        target: /opt/spark/work-dir
+    environment:
+      PYTHONPATH: /opt/spark/python/lib/py4j-0.10.9.5-src.zip:/opt/spark/python:/opt/spark/bin:/usr/lib/python39.zip:/usr/lib/python3.9:/usr/lib/python3.9/lib-dynload:/usr/local/lib/python3.9/dist-packages:/usr/lib/python3/dist-packages
